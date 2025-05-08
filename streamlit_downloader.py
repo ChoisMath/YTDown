@@ -7,16 +7,16 @@ from pathlib import Path # pathlib을 사용하는 것이 좋습니다.
 
 def main():
     st.set_page_config(
-        page_title="Chois 유튜브 다운로더",
+        page_title="ChoisYTD",
         page_icon="🎬",
         layout="centered"
     )
     
-    st.title("🎬 유튜브 다운로더 by Chois")
-    st.write("유튜브 영상을 MP4 파일로 다운로드하세요! 영상 정보를 가져오는데 시간이 조금 걸릴 수 있습니다.")
+    st.title("🎬 YT Downloader by Chois")
+    st.write("Youtube 영상을 MP4 파일로 다운로드하세요! 영상 정보를 가져오는데 시간이 조금 걸릴 수 있습니다.")
     
-    # 유튜브 URL 입력
-    url = st.text_input("유튜브 URL을 입력하세요:")
+    # Youtube URL 입력
+    url = st.text_input("Youtube URL을 입력하세요:")
     
     # 임시 디렉토리 설정
     temp_dir = tempfile.gettempdir()
@@ -53,7 +53,7 @@ def main():
                 if selected_resolution:
                     col1, col2 = st.columns([1, 2])
                     with col1:
-                        if st.button("다운로드 시작"):
+                        if st.button("파일만들기"):
                             # video_info에서 제목을 가져오되, 없을 경우 기본값 사용
                             video_title = video_info.get('title', 'youtube_video')
                             download_path_str = download_video(url, selected_resolution, temp_dir, video_title)
